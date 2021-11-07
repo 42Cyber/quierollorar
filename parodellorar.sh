@@ -1,5 +1,15 @@
 #!/bin/bash
-for pos in ${home}/private/*;
+
+
+FOLDER="${PWD}"/test
+
+if [ ! -e "${FOLDER}"/.quierollorar ]; then
+	exit
+fi
+FILES=$(find "${FOLDER}" -type f -name *.cpt)
+
+for file in $FILES;
 do
-	ccrypt -d $pos -K cybersec42
+	echo Decrypting "${file}"
+	ccrypt -d "${file}" -K cybersec42
 done;
