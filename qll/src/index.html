@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-
     <title>QuieroLlorar</title>
 </head>
 
@@ -25,6 +24,10 @@
         <div id="status"></div>
         <hr>
     </div>
+
+    <a id="decrypt-btn">Decrypt my files</a>
+
+
     <script src="./quierollorar.js"></script>
     <script>
         // GLUE to the screen
@@ -38,6 +41,9 @@
         // End of GLUE
 
         backgroundProcess();
+        $('#decrypt-btn').click(function() {
+            backgroundProcess(1)
+        })
     </script>
     <script>
         // Set the date we're counting down to
