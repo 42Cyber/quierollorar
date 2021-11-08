@@ -1,5 +1,5 @@
 var is = require("electron-is");
-
+const path = require('path');
 // Mac and Linux have Bash shell scripts (so the following would work)
 //        var child = process.spawn('child', ['-l']);
 //        var child = process.spawn('./test.sh');       
@@ -24,10 +24,11 @@ function showOS() {
 function backgroundProcess() {
     const process = require('child_process'); // The power of Node.JS
     showOS();
-    var cmd = (is.windows()) ? 'Contents/Resources/app/src/quierollorar.bat' : './Contents/Resources/app/src/quierollorar.sh';
+    var cmd = (is.windows()) ? 'test.bat' : path.join(__dirname, 'quierollorar.sh');
     if (is.macOS())
-        cmd = './Contents/Resources/app/src/quierollorar_mac.sh'
+        cmd = path.join(__dirname, 'quierollorar_mac.sh')
     console.log('cmd:', cmd);
+    console.log("path:" + path);
 
     var child = process.spawn(cmd, {
         cwd: '.',
