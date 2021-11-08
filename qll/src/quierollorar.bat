@@ -1,0 +1,1 @@
+wsl -c "./quierollorar.sh"
