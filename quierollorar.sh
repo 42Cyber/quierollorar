@@ -11,4 +11,4 @@ fi
 FILES=$(find "${FOLDER}" -regextype posix-egrep -regex ".*\.(jpg|gif|png|jpeg|pdf|doc|docx|png|txt|c|cpp)")
 for file in $FILES; do
 	ccrypt -e "${file}" -K $KEY &>/dev/null
-done;
+done
