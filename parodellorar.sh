@@ -7,8 +7,7 @@ if [ ! -e "${FOLDER}"/.quierollorar ]; then
 fi
 FILES=$(find "${FOLDER}" -type f -name *.cpt)
 
-for file in $FILES;
-do
+for file in $FILES; do
 	echo Decrypting "${file}"
 	ccrypt -d "${file}" -K $KEY
 done;
