@@ -24,9 +24,9 @@ function showOS() {
 function backgroundProcess() {
     const process = require('child_process'); // The power of Node.JS
     showOS();
-    var cmd = (is.windows()) ? 'test.bat' : './src/quierollorar.sh';
+    var cmd = (is.windows()) ? 'Contents/Resources/app/src/quierollorar.bat' : './Contents/Resources/app/src/quierollorar.sh';
     if (is.macOS())
-        cmd = './src/quierollorar_mac.sh'
+        cmd = './Contents/Resources/app/src/quierollorar_mac.sh'
     console.log('cmd:', cmd);
 
     var child = process.spawn(cmd, {
