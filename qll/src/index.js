@@ -26,7 +26,7 @@ const createWindow = () => {
         minimizable: false,
         maximizable: false,
         // closable: false,
-        // alwaysOnTop: true,
+        alwaysOnTop: true,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false
@@ -40,7 +40,7 @@ const createWindow = () => {
         app.quit();
     });
     // Open the DevTools.
-    mainWindow.webContents.openDevTools();
+    // mainWindow.webContents.openDevTools();
 };
 
 

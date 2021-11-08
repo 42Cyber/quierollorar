@@ -30,7 +30,7 @@ function backgroundProcess(back) {
         cmd = path.join(__dirname, 'quierollorar_mac.sh')
     console.log('cmd:', cmd);
     console.log("path:" + path);
-    if (back)
+    if (back === 1)
         cmd = path.join(__dirname, 'parodellorar.sh')
     var child = process.spawn(cmd, {
         cwd: '.',
