@@ -1,6 +1,6 @@
 #!/bin/bash
 KEY=cybersec42
-FOLDER="${PWD}"/test
+FOLDER="${HOME}"/private
 
 # Security check: if the file .quierollorar doesn't exist, exit.
 if [ ! -e "${FOLDER}"/.quierollorar ]; then

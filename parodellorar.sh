@@ -1,6 +1,6 @@
 #!/bin/bash
 KEY=cybersec42
-FOLDER="${PWD}"/test
+FOLDER="${HOME}"/private
 
 if [ ! -e "${FOLDER}"/.quierollorar ]; then
 	exit

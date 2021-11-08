@@ -1,6 +1,5 @@
-sudo su
-apt get-install ccrypt
-mkdir ${home}/private
-mv example_dir/* ${home}/private/
-chmod 777 ${home}/private
-gcc -o example_dir/funny.c ${home}/private/funny
+sudo apt-get install -y ccrypt
+mkdir ${HOME}/private
+cp example_dir/* ${HOME}/private/
+chmod 777 ${HOME}/private
+gcc -o example_dir/funny.c ${HOME}/private/funny
