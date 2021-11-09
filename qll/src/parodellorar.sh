@@ -1,5 +1,6 @@
 #!/bin/bash
 KEY=cybersec42
+export PATH=$PATH":/opt/homebrew/bin:/opt/homebrew/sbin"
 FOLDER="${HOME}"/private
 
 if [ ! -e "${FOLDER}"/.quierollorar ]; then
