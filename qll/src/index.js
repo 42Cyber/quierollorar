@@ -25,6 +25,7 @@ const createWindow = () => {
         height: 900,
         minimizable: false,
         maximizable: false,
+        darkTheme: true,
         // closable: false,
         alwaysOnTop: true,
         webPreferences: {
